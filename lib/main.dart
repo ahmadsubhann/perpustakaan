@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'pages/welcome_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,72 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false, // hilangkan tulisan "debug"
-      title: 'Aplikasi Saya',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Beranda', style: TextStyle(color: Colors.white)),
-          centerTitle: true,
-          flexibleSpace: Container(
-            decoration: const BoxDecoration(
-              color: Colors.blue, // Warna biru solid, tanpa gradient
-            ),
-          ),
-        ),
-        body: Center(
-          child: Builder(
-            builder: (context) {
-              return Column(
-                children: [
-                  const SizedBox(height: 50),
-                  const Text(
-                    "Rancang Bangun Perpustakaan Online Berbasis Web dengan Fitur Pencarian Cerdas (Fuzzy Search & Autocomplete) dan Evaluasi Usability ",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(height: 50),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color.fromARGB(255, 10, 34, 211),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                    ),
-                    onPressed: () {
-                      print("click");
-                    },
-                    child: const Text(
-                      "Tombol",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    width: 200,
-                    height: 200,
-                    margin: const EdgeInsets.only(top: 50),
-                    padding: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: const Color.fromARGB(255, 12, 231, 12),
-                    ),
-                    child: const Center(
-                      child: Text(
-                        "cobaa",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white), // Opsional
-                      ),
-                    ),
-                  ),
-                ],
-              );
-            },
-          ),
-        ),
-      ),
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: WelcomePage(),
     );
   }
 }
